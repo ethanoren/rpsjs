@@ -35,4 +35,25 @@ function getHumanChoice() {
     }
 }
 
+var humanScore = 0, computerScore = 0;
 
+// take the human choice and computer choice
+
+// if humanchoice = rock && computerchoice = paper OR humanchoice = paper && computerchoice = scissor OR humanchoice = scissor && computerchoice = rock
+
+// same as above but for human win
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "rock") {
+        console.log("You lose! " + computerChoice + " beats " + humanChoice);
+        computerChoice++;
+    }
+    else if (computerChoice === "rock" && humanChoice === "paper" || computerChoice === "paper" && humanChoice === "scissors" || computerChoice === "scissors" && humanChoice === "rock") {
+        console.log("You win! " + humanChoice + " beats " + computerChoice);
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection)
